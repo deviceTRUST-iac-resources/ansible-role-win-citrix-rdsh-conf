@@ -17,5 +17,15 @@
     args:
         creates: C:\Logs\done-printer-install.txt
 
+  - name: Copy FSLogix FXA file
+    ansible.builtin.copy:
+      src: files/NotepadPlusPlus.fxa
+      dest: C:\Program Files\FSLogix\Apps\Rules\NotepadPlusPlus.fxa
+
+  - name: Copy FSLogix FXR file
+    ansible.builtin.copy:
+      src: files/NotepadPlusPlus.fxr
+      dest: C:\Program Files\FSLogix\Apps\Rules\NotepadPlusPlus.fxr
+
   - name: Reboot
     ansible.windows.win_reboot:
